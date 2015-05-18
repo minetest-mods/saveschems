@@ -1,8 +1,4 @@
-saveschems 0.1.2 by paramat
-For latest Minetest 0.4.12dev
+saveschems 0.1.3 by paramat
+For Minetest 0.4.12dev and later
 Depends default
-License WTFPL
-
-Unpushed:
-More branches
-air prob 0 for no force-place
+Licenses: Code WTFPL. Schematics CC BY-SA
