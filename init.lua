@@ -38,8 +38,8 @@ local aspen_tree_data = {
 		A, L, T, L, A,
 		L, L, T, L, L,
 		L, L, T, L, L,
-		L, L, T, L, L,
-		A, L, T, L, A,
+		L, L, L, L, L,
+		A, L, L, L, A,
 		A, L, L, L, A,
 
 		A, A, A, A, A,
@@ -113,8 +113,8 @@ local aspen_tree_from_sapling_data = {
 		A, L, B, L, A,
 		L, L, B, L, L,
 		L, L, B, L, L,
-		L, L, B, L, L,
-		A, L, B, L, A,
+		L, L, L, L, L,
+		A, L, L, L, A,
 		A, L, L, L, A,
 
 		A, A, A, A, A,
