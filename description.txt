@@ -1,0 +1,1 @@
+A mod to help create decoration schematics. See lua_api.txt for more information.
