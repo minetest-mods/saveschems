@@ -1,5 +1,160 @@
 -- Schematic file format version 4
 
+local A = {name="air", prob=0}
+local T = {name="default:aspen_tree", prob=255, force_place = true}
+local B = {name="default:aspen_tree", prob=255}
+local L = {name="default:aspen_leaves", prob=255}
+local O = {name="default:aspen_leaves", prob=127}
+
+local aspen_tree_data = {
+	size = { x = 5, y = 10, z = 5 },
+	data = {
+		A, A, A, A, A,
+		A, A, A, A, A,
+		A, A, A, A, A,
+		A, A, A, A, A,
+		A, A, A, A, A,
+		A, A, L, A, A,
+		A, L, L, L, A,
+		O, L, L, L, O,
+		O, L, A, L, O,
+		A, A, A, A, A,
+
+		A, A, A, A, A,
+		A, A, A, A, A,
+		A, A, A, A, A,
+		A, A, O, A, A,
+		A, A, L, A, A,
+		A, L, L, L, A,
+		L, L, L, L, L,
+		L, L, L, L, L,
+		L, L, L, L, L,
+		A, O, L, O, A,
+
+		A, A, A, A, A,
+		A, A, T, A, A,
+		A, A, T, A, A,
+		A, O, T, O, A,
+		A, L, T, L, A,
+		L, L, T, L, L,
+		L, L, T, L, L,
+		L, L, T, L, L,
+		A, L, T, L, A,
+		A, L, L, L, A,
+
+		A, A, A, A, A,
+		A, A, A, A, A,
+		A, A, A, A, A,
+		A, A, O, A, A,
+		A, A, L, A, A,
+		A, L, L, L, A,
+		L, L, L, L, L,
+		L, L, L, L, L,
+		L, L, L, L, L,
+		A, O, L, O, A,
+
+		A, A, A, A, A,
+		A, A, A, A, A,
+		A, A, A, A, A,
+		A, A, A, A, A,
+		A, A, A, A, A,
+		A, A, L, A, A,
+		A, L, L, L, A,
+		O, L, L, L, O,
+		O, L, A, L, O,
+		A, A, A, A, A,
+	},
+	yslice_prob = {
+		{ypos=2, prob=191},
+		{ypos=7, prob=191},
+	},
+}
+
+local aspen_tree_serialized = minetest.serialize_schematic(aspen_tree_data, mts, {})
+local path = minetest.get_modpath("saveschems") .. "/schematics"
+local filename = path .. "/aspen_tree.mts"
+filename = filename:gsub("\"", "\\\""):gsub("\\", "\\\\")
+local file, err = io.open(filename, "wb")
+if err == nil then
+	file:write(aspen_tree_serialized)
+	file:flush()
+	file:close()
+end
+ 
+local aspen_tree_from_sapling_data = {
+	size = { x = 5, y = 10, z = 5 },
+	data = {
+		A, A, A, A, A,
+		A, A, A, A, A,
+		A, A, A, A, A,
+		A, A, A, A, A,
+		A, A, A, A, A,
+		A, A, L, A, A,
+		A, L, L, L, A,
+		O, L, L, L, O,
+		O, L, A, L, O,
+		A, A, A, A, A,
+
+		A, A, A, A, A,
+		A, A, A, A, A,
+		A, A, A, A, A,
+		A, A, O, A, A,
+		A, A, L, A, A,
+		A, L, L, L, A,
+		L, L, L, L, L,
+		L, L, L, L, L,
+		L, L, L, L, L,
+		A, O, L, O, A,
+
+		A, A, A, A, A,
+		A, A, T, A, A,
+		A, A, B, A, A,
+		A, O, B, O, A,
+		A, L, B, L, A,
+		L, L, B, L, L,
+		L, L, B, L, L,
+		L, L, B, L, L,
+		A, L, B, L, A,
+		A, L, L, L, A,
+
+		A, A, A, A, A,
+		A, A, A, A, A,
+		A, A, A, A, A,
+		A, A, O, A, A,
+		A, A, L, A, A,
+		A, L, L, L, A,
+		L, L, L, L, L,
+		L, L, L, L, L,
+		L, L, L, L, L,
+		A, O, L, O, A,
+
+		A, A, A, A, A,
+		A, A, A, A, A,
+		A, A, A, A, A,
+		A, A, A, A, A,
+		A, A, A, A, A,
+		A, A, L, A, A,
+		A, L, L, L, A,
+		O, L, L, L, O,
+		O, L, A, L, O,
+		A, A, A, A, A,
+	},
+	yslice_prob = {
+		{ypos=2, prob=191},
+		{ypos=7, prob=191},
+	},
+}
+
+local aspen_tree_from_sapling_serialized = minetest.serialize_schematic(aspen_tree_from_sapling_data, mts, {})
+local path = minetest.get_modpath("saveschems") .. "/schematics"
+local filename = path .. "/aspen_tree_from_sapling.mts"
+filename = filename:gsub("\"", "\\\""):gsub("\\", "\\\\")
+local file, err = io.open(filename, "wb")
+if err == nil then
+	file:write(aspen_tree_from_sapling_serialized)
+	file:flush()
+	file:close()
+end
 
 -- Apple tree
 
