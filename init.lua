@@ -2,7 +2,7 @@
 -- Schematic file format version 4
 
 local mts_save = function(name, schematic)
-	local s = minetest.serialize_schematic(schematic, mts, {})
+	local s = minetest.serialize_schematic(schematic, "mts", {})
 	local path = minetest.get_modpath("saveschems") .. "/schematics"
 	local filename = path .. "/" .. name .. ".mts"
 	filename = filename:gsub("\"", "\\\""):gsub("\\", "\\\\")
