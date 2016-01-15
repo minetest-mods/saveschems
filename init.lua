@@ -12,9 +12,10 @@ local mts_save = function(name, schematic)
 		file:flush()
 		file:close()
 	end
+	print("Wrote: " .. filename)
 end
 
--- Aspen tree
+-- Mapgen Aspen tree
 
 local _ = {name="air", prob=0}
 local T = {name="default:aspen_tree", prob=255, force_place = true}
@@ -150,7 +151,7 @@ mts_save("aspen_tree_from_sapling", {
 	},
 })
 
--- Apple tree
+-- Mapgen Apple tree
 
 local L = {name="default:leaves", prob=191}
 local N = {name="default:leaves", prob=223}
@@ -162,12 +163,13 @@ local U = {name="default:tree", prob=191}
 local I = {name="default:tree", prob=191, force_place = true}
 
 mts_save("apple_tree", {
-	size = {x=5, y=7, z=5},
+	size = {x=5, y=8, z=5},
 	data = {
 		_, _, _, _, _,
 		_, _, _, _, _,
 		_, _, _, _, _,
 		_, _, _, _, _,
+		L, N, N, N, L,
 		L, N, N, N, L,
 		L, N, N, N, L,
 		_, _, _, _, _,
@@ -178,13 +180,15 @@ mts_save("apple_tree", {
 		_, _, _, _, _,
 		N, I, F, I, N,
 		N, M, M, M, N,
+		N, M, M, M, N,
 		_, N, N, N, _,
-
-		_, _, Y, _, _,
+ 
+		_, _, T, _, _,
 		_, _, Y, _, _,
 		_, _, Y, _, _,
 		_, _, Y, _, _,
 		N, F, M, F, N,
+		N, M, M, M, N,
 		N, M, M, M, N,
 		_, N, M, N, _,
 
@@ -194,6 +198,7 @@ mts_save("apple_tree", {
 		_, _, _, _, _,
 		N, I, F, I, N,
 		N, M, M, M, N,
+		N, M, M, M, N,
 		_, N, N, N, _,
 
 		_, _, _, _, _,
@@ -202,21 +207,24 @@ mts_save("apple_tree", {
 		_, _, _, _, _,
 		L, N, N, N, L,
 		L, N, N, N, L,
+		L, N, N, N, L,
 		_, _, _, _, _,
 	},
 	yslice_prob = {
 		{ypos=2, prob=127},
+		{ypos=6, prob=127},
 	},
 })
 
 -- Apple tree from sapling
 mts_save("apple_tree_from_sapling", {
-	size = {x=5, y=7, z=5},
+	size = {x=5, y=8, z=5},
 	data = {
 		_, _, _, _, _,
 		_, _, _, _, _,
 		_, _, _, _, _,
 		_, _, _, _, _,
+		L, N, N, N, L,
 		L, N, N, N, L,
 		L, N, N, N, L,
 		_, _, _, _, _,
@@ -226,6 +234,7 @@ mts_save("apple_tree_from_sapling", {
 		_, _, _, _, _,
 		_, _, _, _, _,
 		N, U, F, U, N,
+		N, M, M, M, N,
 		N, M, M, M, N,
 		_, N, N, N, _,
 
@@ -235,6 +244,7 @@ mts_save("apple_tree_from_sapling", {
 		_, _, T, _, _,
 		N, F, M, F, N,
 		N, M, M, M, N,
+		N, M, M, M, N,
 		_, N, M, N, _,
 
 		_, _, _, _, _,
@@ -242,6 +252,7 @@ mts_save("apple_tree_from_sapling", {
 		_, _, _, _, _,
 		_, _, _, _, _,
 		N, U, F, U, N,
+		N, M, M, M, N,
 		N, M, M, M, N,
 		_, N, N, N, _,
 
@@ -251,14 +262,16 @@ mts_save("apple_tree_from_sapling", {
 		_, _, _, _, _,
 		L, N, N, N, L,
 		L, N, N, N, L,
+		L, N, N, N, L,
 		_, _, _, _, _,
 	},
 	yslice_prob = {
 		{ypos=2, prob=127},
+		{ypos=6, prob=127},
 	},
 })
 
--- Jungle tree
+-- Mapgen Jungle tree
 
 local L = {name="default:jungleleaves", prob=255}
 local N = {name="default:jungleleaves", prob=223}
@@ -308,7 +321,7 @@ mts_save("jungle_tree", {
 		_, N, N, N, _,
 
 		_, B, B, B, _,
-		_, I, B, I, _,
+		_, B, B, B, _,
 		_, U, B, U, _,
 		_, _, B, _, _,
 		_, _, B, _, _,
@@ -476,12 +489,13 @@ mts_save("jungle_tree_from_sapling", {
 	},
 })
 
--- Pine tree
+-- Mapgen Pine tree
 
 local L = {name="default:pine_needles", prob=255}
 local M = {name="default:pine_needles", prob=223}
 local N = {name="default:pine_needles", prob=191}
 local T = {name="default:pine_tree", prob=255, force_place = true}
+local B = {name="default:pine_tree", prob=255}
 
 mts_save("pine_tree", {
 	size = {x=5, y=14, z=5},
@@ -516,7 +530,7 @@ mts_save("pine_tree", {
 		_, L, L, L, _,
 		_, _, _, _, _,
 
-		_, _, T, _, _,
+		_, _, B, _, _,
 		_, _, T, _, _,
 		_, _, T, _, _,
 		_, _, T, _, _,
@@ -659,7 +673,7 @@ mts_save("pine_tree_from_sapling", {
 	},
 })
 
--- Acacia tree
+-- Mapgen Acacia tree
 
 local L = {name="default:acacia_leaves", prob=255}
 local M = {name="default:acacia_leaves", prob=223}
@@ -704,7 +718,7 @@ mts_save("acacia_tree", {
 		M, M, M, M, _, _, _, _, _,
 		_, _, _, _, M, L, L, L, M,
 
-		_, _, _, _, T, _, _, _, _,
+		_, _, _, _, {name="default:acacia_tree", prob=255} , _, _, _, _,
 		_, _, _, _, T, _, _, _, _,
 		_, _, _, _, T, _, _, _, _,
 		_, _, _, _, T, _, _, _, _,
@@ -854,7 +868,7 @@ local E = {name="default:cactus", prob=127, param2=20}
 mts_save("large_cactus", {
 	size = {x=5, y=7, z=1},
 	data = {
-		_, _, {name="default:cactus", prob=255, param2=20, force_place = true}, _, _,
+		_, _, C, _, _,
 		_, _, C, _, _,
 		_, _, C, _, _,
 		C, C, C, C, C,
@@ -868,8 +882,8 @@ mts_save("large_cactus", {
 mts_save("papyrus", {
 	size = {x = 1, y = 7, z = 1},
 	data = {
-		{name = "default:sand", prob = 255, force_place = true},
-		{name = "default:sand", prob = 255, force_place = true},
+		{name = "default:dirt", prob = 255, force_place = true},
+		{name = "default:dirt_with_grass", prob = 255, force_place = true},
 		{name = "default:papyrus", prob = 255},
 		{name = "default:papyrus", prob = 255},
 		{name = "default:papyrus", prob = 255},
@@ -882,3 +896,12 @@ mts_save("papyrus", {
 	},
 })
 
+-- Waterlily
+mts_save("waterlily", {
+	size = {x = 1, y = 3, z = 1},
+	data = {
+		{name = "default:dirt", prob = 255, force_place = true},
+		{name = "default:water_source", prob = 255},
+		{name = "flowers:waterlily", prob = 255},
+	}
+})
