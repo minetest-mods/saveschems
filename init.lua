@@ -1,4 +1,3 @@
-
 -- Schematic file format version 4
 
 local mts_save = function(name, schematic)
@@ -15,139 +14,189 @@ local mts_save = function(name, schematic)
 	print("Wrote: " .. filename)
 end
 
--- Mapgen Aspen tree
+-- This node will not replace existing world nodes
 
 local _ = {name = "air", prob = 0}
+
+-- Mapgen Aspen tree
+
 local T = {name = "default:aspen_tree", prob = 255, force_place = true}
 local B = {name = "default:aspen_tree", prob = 255}
 local L = {name = "default:aspen_leaves", prob = 255}
-local O = {name = "default:aspen_leaves", prob = 127}
+local M = {name = "default:aspen_leaves", prob = 223}
+local N = {name = "default:aspen_leaves", prob = 127}
 
 mts_save("aspen_tree", {
-	size = { x = 5, y = 10, z = 5 },
+	size = {x = 5, y = 14, z = 5},
 	data = {
 		_, _, _, _, _,
 		_, _, _, _, _,
 		_, _, _, _, _,
 		_, _, _, _, _,
 		_, _, _, _, _,
-		_, _, L, _, _,
-		_, L, L, L, _,
-		O, L, L, L, O,
-		O, L, _, L, O,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		N, M, L, M, N,
+		_, _, _, _, _,
+		N, M, L, M, N,
+		_, _, _, _, _,
+		N, M, L, M, N,
+		_, _, _, _, _,
 		_, _, _, _, _,
 
 		_, _, _, _, _,
 		_, _, _, _, _,
 		_, _, _, _, _,
-		_, _, O, _, _,
-		_, _, L, _, _,
-		_, L, L, L, _,
-		L, L, L, L, L,
-		L, L, L, L, L,
-		L, L, L, L, L,
-		_, O, L, O, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		_, M, L, M, _,
+		M, L, L, L, M,
+		_, M, L, M, _,
+		M, L, L, L, M,
+		_, M, L, M, _,
+		M, L, L, L, M,
+		_, M, L, M, _,
+		_, _, _, _, _,
 
 		_, _, T, _, _,
 		_, _, T, _, _,
 		_, _, T, _, _,
-		_, O, T, O, _,
+		_, _, T, _, _,
+		_, _, T, _, _,
+		_, _, T, _, _,
 		_, L, T, L, _,
 		L, L, T, L, L,
+		_, L, T, L, _,
 		L, L, T, L, L,
+		_, L, T, L, _,
 		L, L, L, L, L,
 		_, L, L, L, _,
-		_, L, L, L, _,
-
-		_, _, _, _, _,
-		_, _, _, _, _,
-		_, _, _, _, _,
-		_, _, O, _, _,
 		_, _, L, _, _,
-		_, L, L, L, _,
-		L, L, L, L, L,
-		L, L, L, L, L,
-		L, L, L, L, L,
-		_, O, L, O, _,
 
 		_, _, _, _, _,
 		_, _, _, _, _,
 		_, _, _, _, _,
 		_, _, _, _, _,
 		_, _, _, _, _,
-		_, _, L, _, _,
-		_, L, L, L, _,
-		O, L, L, L, O,
-		O, L, _, L, O,
+		_, _, _, _, _,
+		_, M, L, M, _,
+		M, L, L, L, M,
+		_, M, L, M, _,
+		M, L, L, L, M,
+		_, M, L, M, _,
+		M, L, L, L, M,
+		_, M, L, M, _,
+		_, _, _, _, _,
+
+		_, _, _, _, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		N, M, L, M, N,
+		_, _, _, _, _,
+		N, M, L, M, N,
+		_, _, _, _, _,
+		N, M, L, M, N,
+		_, _, _, _, _,
 		_, _, _, _, _,
 	},
 	yslice_prob = {
-		{ypos = 2, prob = 191},
-		{ypos = 7, prob = 191},
+		{ypos = 2, prob = 127},
+		{ypos = 3, prob = 127},
+		{ypos = 8, prob = 127},
+		{ypos = 10, prob = 127},
 	},
 })
 
+-- Aspen tree from sapling
+
 mts_save("aspen_tree_from_sapling", {
-	size = { x = 5, y = 10, z = 5 },
+	size = {x = 5, y = 14, z = 5},
 	data = {
 		_, _, _, _, _,
 		_, _, _, _, _,
 		_, _, _, _, _,
 		_, _, _, _, _,
 		_, _, _, _, _,
-		_, _, L, _, _,
-		_, L, L, L, _,
-		O, L, L, L, O,
-		O, L, _, L, O,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		N, M, L, M, N,
+		_, _, _, _, _,
+		N, M, L, M, N,
+		_, _, _, _, _,
+		N, M, L, M, N,
+		_, _, _, _, _,
 		_, _, _, _, _,
 
 		_, _, _, _, _,
 		_, _, _, _, _,
 		_, _, _, _, _,
-		_, _, O, _, _,
-		_, _, L, _, _,
-		_, L, L, L, _,
-		L, L, L, L, L,
-		L, L, L, L, L,
-		L, L, L, L, L,
-		_, O, L, O, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		_, M, L, M, _,
+		M, L, L, L, M,
+		_, M, L, M, _,
+		M, L, L, L, M,
+		_, M, L, M, _,
+		M, L, L, L, M,
+		_, M, L, M, _,
+		_, _, _, _, _,
 
 		_, _, B, _, _,
 		_, _, T, _, _,
 		_, _, B, _, _,
-		_, O, B, O, _,
+		_, _, B, _, _,
+		_, _, B, _, _,
+		_, _, B, _, _,
 		_, L, B, L, _,
 		L, L, B, L, L,
+		_, L, B, L, _,
 		L, L, B, L, L,
+		_, L, B, L, _,
 		L, L, L, L, L,
 		_, L, L, L, _,
-		_, L, L, L, _,
-
-		_, _, _, _, _,
-		_, _, _, _, _,
-		_, _, _, _, _,
-		_, _, O, _, _,
 		_, _, L, _, _,
-		_, L, L, L, _,
-		L, L, L, L, L,
-		L, L, L, L, L,
-		L, L, L, L, L,
-		_, O, L, O, _,
 
 		_, _, _, _, _,
 		_, _, _, _, _,
 		_, _, _, _, _,
 		_, _, _, _, _,
 		_, _, _, _, _,
-		_, _, L, _, _,
-		_, L, L, L, _,
-		O, L, L, L, O,
-		O, L, _, L, O,
+		_, _, _, _, _,
+		_, M, L, M, _,
+		M, L, L, L, M,
+		_, M, L, M, _,
+		M, L, L, L, M,
+		_, M, L, M, _,
+		M, L, L, L, M,
+		_, M, L, M, _,
+		_, _, _, _, _,
+
+		_, _, _, _, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		N, M, L, M, N,
+		_, _, _, _, _,
+		N, M, L, M, N,
+		_, _, _, _, _,
+		N, M, L, M, N,
+		_, _, _, _, _,
 		_, _, _, _, _,
 	},
 	yslice_prob = {
-		{ypos = 2, prob = 191},
-		{ypos = 7, prob = 191},
+		{ypos = 2, prob = 127},
+		{ypos = 3, prob = 127},
+		{ypos = 8, prob = 127},
+		{ypos = 10, prob = 127},
 	},
 })
 
@@ -217,6 +266,7 @@ mts_save("apple_tree", {
 })
 
 -- Apple tree from sapling
+
 mts_save("apple_tree_from_sapling", {
 	size = {x = 5, y = 8, z = 5},
 	data = {
@@ -385,6 +435,7 @@ mts_save("jungle_tree", {
 -- Jungle tree from sapling
 
 local B = {name = "default:jungletree", prob = 255}
+local C = {name = "default:jungletree", prob = 255, force_place = true}
 local Y = {name = "default:jungletree", prob = 191}
 local U = {name = "default:jungletree", prob = 127}
 
@@ -428,7 +479,7 @@ mts_save("jungle_tree_from_sapling", {
 		_, N, N, N, _,
 
 		_, B, B, B, _,
-		_, B, {name = "default:jungletree", prob = 255, force_place = true}, B, _,
+		_, B, C, B, _,
 		_, U, B, U, _,
 		_, _, B, _, _,
 		_, _, B, _, _,
@@ -586,6 +637,7 @@ mts_save("pine_tree", {
 -- Pine tree from sapling
 
 local T = {name = "default:pine_tree", prob = 255}
+local U = {name = "default:pine_tree", prob = 255, force_place = true}
 
 mts_save("pine_tree_from_sapling", {
 	size = {x = 5, y = 14, z = 5},
@@ -621,7 +673,7 @@ mts_save("pine_tree_from_sapling", {
 		_, _, _, _, _,
 
 		_, _, T, _, _,
-		_, _, {name = "default:pine_tree", prob = 255, force_place = true}, _, _,
+		_, _, U, _, _,
 		_, _, T, _, _,
 		_, _, T, _, _,
 		_, _, T, _, _,
@@ -771,6 +823,7 @@ mts_save("acacia_tree", {
 -- Acacia tree from sapling
 
 local T = {name = "default:acacia_tree", prob = 255}
+local U = {name = "default:acacia_tree", prob = 255, force_place = true}
 
 mts_save("acacia_tree_from_sapling", {
 	size = {x = 9, y = 8, z = 9},
@@ -813,7 +866,7 @@ mts_save("acacia_tree_from_sapling", {
 		_, _, _, _, M, L, L, L, M,
 
 		_, _, _, _, T, _, _, _, _,
-		_, _, _, _, {name = "default:acacia_tree", prob = 255, force_place = true}, _, _, _, _,
+		_, _, _, _, U, _, _, _, _,
 		_, _, _, _, T, _, _, _, _,
 		_, _, _, _, T, _, _, _, _,
 		_, _, _, _, T, _, _, _, _,
@@ -887,7 +940,7 @@ mts_save("papyrus", {
 	size = {x = 1, y = 7, z = 1},
 	data = {
 		{name = "default:dirt", prob = 255, force_place = true},
-		{name = "default:dirt_with_grass", prob = 255, force_place = true},
+		{name = "default:dirt", prob = 255, force_place = true},
 		{name = "default:papyrus", prob = 255},
 		{name = "default:papyrus", prob = 255},
 		{name = "default:papyrus", prob = 255},
@@ -906,7 +959,92 @@ mts_save("waterlily", {
 	size = {x = 1, y = 3, z = 1},
 	data = {
 		{name = "default:dirt", prob = 255, force_place = true},
-		{name = "default:water_source", prob = 255},
+		{name = "air", prob = 0},
 		{name = "flowers:waterlily", prob = 255},
 	}
+})
+
+-- Corals
+
+local C = {name = "default:coral_brown", prob = 255, force_place = true}
+local c = {name = "default:coral_brown", prob = 191, force_place = true}
+local O = {name = "default:coral_orange", prob = 255, force_place = true}
+local o = {name = "default:coral_orange", prob = 191, force_place = true}
+local X = {name = "default:coral_skeleton", prob = 255, force_place = true}
+local x = {name = "default:coral_skeleton", prob = 63, force_place = true}
+
+mts_save("corals", {
+	size = {x = 5, y = 3, z = 5},
+	data = {
+		_, _, _, _, _,
+		o, C, O, c, _,
+		_, C, x, _, _,
+
+		_, _, X, _, _,
+		C, O, O, C, o,
+		c, c, O, o, x,
+
+		_, X, X, X, _,
+		c, C, C, O, O,
+		O, C, O, C, c,
+
+		_, _, X, _, _,
+		x, O, C, O, C,
+		_, x, C, O, _,
+
+		_, _, _, _, _,
+		_, o, O, C, c,
+		_, _, o, _, _,
+	},
+	yslice_prob = {
+		{ypos = 2, prob = 127},
+	}
+})
+
+-- Bush
+
+local L = {name = "default:bush_leaves", prob = 255}
+local M = {name = "default:bush_leaves", prob = 191}
+local N = {name = "default:bush_leaves", prob = 127}
+local S = {name = "default:bush_stem", prob = 255, force_place = true}
+
+mts_save("bush", {
+	size = {x = 3, y = 3, z = 3},
+	data = {
+		_, _, _,
+		M, L, M,
+		N, M, N,
+
+		_, _, _,
+		L, S, L,
+		M, L, M,
+
+		_, _, _,
+		M, L, M,
+		N, M, N,
+	},
+})
+
+-- Acaica bush
+
+local L = {name = "default:acacia_bush_leaves", prob = 255}
+local M = {name = "default:acacia_bush_leaves", prob = 191}
+local N = {name = "default:acacia_bush_leaves", prob = 127}
+local S = {name = "default:acacia_bush_stem", prob = 255, force_place = true}
+
+mts_save("acacia_bush", {
+	size = {x = 3, y = 3, z = 3},
+	data = {
+		_, _, _,
+		M, L, M,
+		N, M, N,
+
+		_, _, _,
+		L, S, L,
+		M, L, M,
+
+		_, _, _,
+		M, L, M,
+		N, M, N,
+	},
 })

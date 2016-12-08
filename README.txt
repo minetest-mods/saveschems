@@ -1,7 +1,7 @@
-saveschems 0.2.0 by paramat
+saveschems 0.2.1 by paramat
 For Minetest 0.4.13 and later
-Depends default
-Licenses: Code WTFPL. Schematics CC BY-SA
+Depends default flowers
+Licenses: Code MIT. Schematics CC BY-SA 3.0
 
 This mod exists to help create (mostly tree) decorations for the
 in-game mapgen code. The code in this mod is used to create the
