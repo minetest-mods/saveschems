@@ -1025,7 +1025,7 @@ mts_save("bush", {
 	},
 })
 
--- Acaica bush
+-- Acacia bush
 
 local L = {name = "default:acacia_bush_leaves", prob = 255}
 local M = {name = "default:acacia_bush_leaves", prob = 191}
@@ -1046,5 +1046,87 @@ mts_save("acacia_bush", {
 		_, _, _,
 		M, L, M,
 		N, M, N,
+	},
+})
+
+-- Apple tree log
+
+mts_save("apple_log", {
+	size = {x = 3, y = 3, z = 1},
+	data = {
+		{name = "air", prob = 0},
+		{name = "air", prob = 0},
+		{name = "air", prob = 0},
+		{name = "default:tree", param2 = 12, prob = 191},
+		{name = "default:tree", param2 = 12},
+		{name = "default:tree", param2 = 12, prob = 127},
+		{name = "air", prob = 0},
+		{name = "flowers:mushroom_brown", prob = 63},
+		{name = "air", prob = 0},
+	},
+})
+
+-- Jungletree log
+
+mts_save("jungle_log", {
+	size = {x = 3, y = 3, z = 1},
+	data = {
+		{name = "air", prob = 0},
+		{name = "air", prob = 0},
+		{name = "air", prob = 0},
+		{name = "default:jungletree", param2 = 12, prob = 191},
+		{name = "default:jungletree", param2 = 12},
+		{name = "default:jungletree", param2 = 12, prob = 127},
+		{name = "air", prob = 0},
+		{name = "flowers:mushroom_brown", prob = 127},
+		{name = "air", prob = 0},
+	},
+})
+
+-- Pine tree log
+
+mts_save("pine_log", {
+	size = {x = 3, y = 3, z = 1},
+	data = {
+		{name = "air", prob = 0},
+		{name = "air", prob = 0},
+		{name = "air", prob = 0},
+		{name = "default:pine_tree", param2 = 12, prob = 191},
+		{name = "default:pine_tree", param2 = 12},
+		{name = "default:pine_tree", param2 = 12, prob = 127},
+		{name = "air", prob = 0},
+		{name = "flowers:mushroom_red", prob = 63},
+		{name = "air", prob = 0},
+	},
+})
+
+-- Acacia tree log
+
+mts_save("acacia_log", {
+	size = {x = 3, y = 2, z = 1},
+	data = {
+		{name = "air", prob = 0},
+		{name = "air", prob = 0},
+		{name = "air", prob = 0},
+		{name = "default:acacia_tree", param2 = 12, prob = 191},
+		{name = "default:acacia_tree", param2 = 12},
+		{name = "default:acacia_tree", param2 = 12, prob = 127},
+	},
+})
+
+-- Aspen tree log
+
+mts_save("aspen_log", {
+	size = {x = 3, y = 3, z = 1},
+	data = {
+		{name = "air", prob = 0},
+		{name = "air", prob = 0},
+		{name = "air", prob = 0},
+		{name = "default:aspen_tree", param2 = 12},
+		{name = "default:aspen_tree", param2 = 12},
+		{name = "default:aspen_tree", param2 = 12, prob = 127},
+		{name = "flowers:mushroom_red", prob = 63},
+		{name = "flowers:mushroom_brown", prob = 63},
+		{name = "air", prob = 0},
 	},
 })

@@ -1,4 +1,4 @@
-saveschems 0.2.1 by paramat
+saveschems 0.2.2 by paramat and sofar
 For Minetest 0.4.13 and later
 Depends default flowers
 Licenses: Code MIT. Schematics CC BY-SA 3.0
